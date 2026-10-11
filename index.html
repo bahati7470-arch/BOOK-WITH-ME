@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book With Me — Discover & Book the Best Hotels in Kenya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/cards.css" />
+  <link rel="stylesheet" href="css/chat.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300b37e'/><text x='50' y='68' font-size='52' font-family='sans-serif' font-weight='800' text-anchor='middle' fill='%2304160f'>BW</text></svg>" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Book With Me</a>
+      <nav class="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#" Data-filter="Safari">Safari Lodges</a>
+        <a href="#" Data-filter="Beach">Beach Resorts</a>
+        <a href="#"Data-filter="Bookings">My Bookings</a>
+      </nav>
+      <button class="nav-profile">Profile</button>
+      <button class="nav-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Discover &amp; Book the<br />Best Hotels in Kenya</h1>
+
+      <form id="search-form" class="search-bar">
+        <div class="search-field">
+          <label>Location</label>
+          <div class="search-input">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <input id="location" placeholder="JW Marriott Masai Mara" />
+          </div>
+        </div>
+        <div class="search-field">
+          <label>Dates</label>
+          <div class="search-input">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <input id="dates" placeholder="Sat 1 – Sun 1" />
+          </div>
+        </div>
+        <div class="search-field">
+          <label>Guests</label>
+          <div class="search-input">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <input id="guests" placeholder="All" />
+          </div>
+        </div>
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section class="recommendations">
+    <div class="section-head">
+      <h2>Most recommendations</h2>
+      <a href="#" class="see-all">See all</a>
+    </div>
+    <div id="card-grid" class="card-grid">
+      <!-- cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- CHAT DRAWER (the AI booking flow — slides up when you click a card) -->
+  <aside id="chat-drawer" class="chat-drawer" aria-hidden="true">
+    <div class="chat-header">
+      <div class="chat-brand">
+        <div class="brand-mark">BW</div>
+        <div>
+          <strong>Book With Me</strong>
+          <span>AI concierge</span>
+        </div>
+      </div>
+      <button id="chat-close" class="chat-close" aria-label="Close">×</button>
+    </div>
+    <main id="chat" class="chat">
+      <div class="msg agent">
+        <div class="bubble">Hi ,, Tell me what you're looking for — e.g. <em>"Hotel in Diani for 3 nights under $80"</em>.</div>
+      </div>
+    </main>
+    <form id="composer" class="composer" autocomplete="off">
+      <input id="input" type="text" placeholder="Hotel in Diani for 3 nights under $80…" />
+      <button type="submit" id="send" aria-label="Send">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+  </aside>
+
+  <div id="chat-fab" class="chat-fab" role="button" aria-label="Open concierge">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </div>
+
+ <script src="js/config.js"></script>
+<script src="js/state.js"></script>
+<script src="js/api.js"></script>
+<script src="js/render.js"></script>
+<script src="js/mpesa.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/main.js"></script>
+<!-- <script src="js/mock.js"></script> -->
+</body>
+</html>
